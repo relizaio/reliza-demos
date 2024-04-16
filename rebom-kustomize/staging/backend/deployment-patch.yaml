@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rebom-backend
+  namespace: rebom
+spec:
+  template:
+    spec:
+      containers:
+      - name: rebom-backend-container
+        image: registry.relizahub.com/library/rebom-backend:123
+      initContainers:
+      - name: rebom-backend-init
+        image: registry.relizahub.com/library/rebom-backend:123
+      - name: rebom-backend-migrations
+        image: flyway/flyway:9-alpine

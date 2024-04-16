@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rebom-frontend
+  namespace: rebom
+spec:
+  template:
+    spec:
+      containers:
+      - name: rebom-frontend
+        image: registry.relizahub.com/library/rebom-frontend:1234
